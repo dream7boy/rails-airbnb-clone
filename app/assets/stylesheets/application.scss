@@ -13,8 +13,10 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+@import "devise/registrations/index";
 @import "pets/index";
 
 body {
   padding-bottom: 140px;
 }
+

@@ -2,21 +2,31 @@
   <div class="banner-content text-center">
     <h1>Search for an Exotic Pet</h1>
     <form action="" style="color: black">
-      <select id="select" value="Select Species" style="width: 300px"> <!--Supplement an id here instead of using 'name'-->
+      <select id="select" value="Select Species" class="input-lg"> <!--Supplement an id here instead of using 'name'-->
         <option value="select">Select Species</option>
         <option value="iguana">Iguana</option>
         <option value="hedgehog">Hedgehog</option>
         <option value="owl">Owl</option>
-    </select>
-      <input type="text" placeholder="Select Date(s)">
-      <input type="submit" value="Search" class="btn btn-success btn-lg circular">
+        <option value="capybara">Capybara</option>
+        <option value="chameleon">Chameleon</option>
+        <option value="fennec">Fennec</option>
+        <option value="sea-otter">Sea Otter</option>
+        <option value="wallaby">Wallaby</option>
+        <option value="chinchilla">Chinchilla</option>
+        <option value="python">Python</option>
+        <option value="crocodile">Crocodile</option>
+      </select>
+      <input id="date" type="date" placeholder="Select Date(s)" class="input-lg">
+      <input type="submit" value="Search" class="btn btn-success btn-round btn-lg">
     </form>
   </div>
 </div>
-<div class="below-banner text-center">
+<div class="home-content text-center">
   <h2>Why Choose Pexotic?</h2>
-    <%= image_tag 'exoticpets.jpg' %>
-    <h4 style="margin-top: 50px;">Lease your exotic pet and earn money</h4>
-    <h4>Rent an exotic pet for a day or more</h4>
-    <h4>Join a community of exotic pet lovers</h4>
+  <%= image_tag 'exoticpets.jpg' %>
+  <ul>
+    <li>Lease your exotic pet and earn money</li>
+    <li>Rent an exotic pet for a day or more</li>
+    <li>Join a community of exotic pet lovers</li>
+  </ul>
 </div>
