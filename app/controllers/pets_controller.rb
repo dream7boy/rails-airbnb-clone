@@ -10,4 +10,25 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
+  def new
+    @pet = Pet.new
+  end
+
+  def create
+    @pet = Pet.new(pet_params)
+    @pet.owner = current_user
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def pet_params
+    params.require(:pet).permit(:start_date, :end_date,
+      :name, :species, :daily_price, :description, :age,
+      :gender, :personality)
+  end
 end
