@@ -1,0 +1,32 @@
+<h1 class="text-center col-xs-12">Add new pet</h1>
+
+<div class="container">
+  <div class="row col-xs-12">
+
+      <%= simple_form_for(@pet) do |f| %>
+
+        <% if @pet.errors.any? %>
+          <div>
+            <p>Errors</p>
+            <ul>
+              <% @pet.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :name %>
+        <%= f.input :species %>
+        <%= f.input :daily_price %>
+        <%= f.input :description %>
+        <%= f.input :age %>
+        <%= f.input :gender %>
+        <%= f.input :personality %>
+        <%= f.submit "Submit", class: "btn btn-primary"%>
+      <% end %>
+
+  </div>
+</div>
