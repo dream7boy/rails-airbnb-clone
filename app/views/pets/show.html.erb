@@ -1,4 +1,97 @@
-<div class="container">
+
+  <div class="show-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8"> 
+          <div>
+            <h1>Mr. Capybara<%#= @pet.name %></h1>
+            <%= image_tag "capybara.jpg", class: "show-image" %></p> <!-- changed to dynamically -->
+          </div>
+          <div class="pets-content">
+            <h2>The Creature</h2>
+            <p>Mr. Hedgehog is a friendly creature who loves to play with anyone and everyone. His favorite food is watermelon and he especially loves to roll around in the grass in a half-eaten watermelon. He is easily frightened by loud noises and darkness so please take care to avoid bringing him to loud or dark places.</p>
+            <h2>Details</h2>
+            <ul>
+              <li>
+                <strong>Gender:</strong> male<br />         
+              </li>
+              <li>
+                <strong>Age:</strong> 6 months old<br />
+              </li>
+              <li>
+                <strong>Personality:</strong> easy-going, sensitive<br />        
+              </li>
+              <li>
+                <strong>Texture:</strong> spiky on top, soft on belly<br />           
+              </li>
+            </ul>
+            <h2>Reviews of this pets</h2>
+            <ul class="stars">
+              <li><p>Overall rates: </p></li>
+              <li><i class="fa fa-star marked"></i></li>
+              <li><i class="fa fa-star marked"></i></li>
+              <li><i class="fa fa-star marked"></i></li>
+              <li><i class="fa fa-star marked"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li>100 reviews</li>
+            </ul>
+            <div class="review">
+              <h4>Review title</h4>
+              <ul class="stars">
+                <li><img src="http://placehold.it/50x50" class="avatar"></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li>100 reviews</li>
+              </ul>
+              <p>Review content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.</p>
+            </div><div class="review">
+              <h4>Review title</h4>
+              <ul class="stars">
+                <li><img src="http://placehold.it/50x50" class="avatar"></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star marked"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li>100 reviews</li>
+              </ul>
+              <p>Review content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4"> 
+          <div class="book-container">
+            <h2>Rent Mr. Capybara for $20/day?</h2> <!-- Shoule be dynamically -->
+            <hr>
+            <div class="rental-dates">
+              <form action="" method="get" accept-charset="utf-8">
+                <div class="form-group">
+                  <label for="">Rental Start Date: </label>
+                  <input type="date" class="rent-input-field">
+                </div>
+                <div class="form-group">
+                  <label for="">Rental End Date: </label>
+                  <input type="date" class="rent-input-field">
+                </div>
+                <input type="button" value="BOOK" class="btn btn-primary">
+              </form>
+            </div>
+          </div>
+        </div>
+        <%#= link_to "Back to lists", pets_path %>
+      </div>
+    </div>
+  </div>
+=
   <h1>show page for <%= @pet.name %></h1>
   <ul>
     <li>Age: <%= @pet.age %></li>
