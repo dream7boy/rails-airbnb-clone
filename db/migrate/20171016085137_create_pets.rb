@@ -4,7 +4,8 @@ class CreatePets < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :species
       t.text :description
-      t.references :user, foreign_key: true, index: true
+      t.references :owner, index: true, foreign_key: { to_table: :users }
+      # t.references :user, foreign_key: true, index: true
 
       t.timestamps
     end
