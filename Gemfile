@@ -17,6 +17,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'pry-byebug'
