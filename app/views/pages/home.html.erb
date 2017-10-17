@@ -2,14 +2,23 @@
   <div class="banner-content text-center">
     <h1>Search for an Exotic Pet</h1>
     <form action="" style="color: black">
-      <select id="select" value="Select Species" style="width: 300px"> <!--Supplement an id here instead of using 'name'-->
+      <select id="select" value="Select Species" class="input-lg"> <!--Supplement an id here instead of using 'name'-->
         <option value="select">Select Species</option>
         <option value="iguana">Iguana</option>
         <option value="hedgehog">Hedgehog</option>
         <option value="owl">Owl</option>
+        <option value="capybara">Capybara</option>
+        <option value="chameleon">Chameleon</option>
+        <option value="fennec">Fennec</option>
+        <option value="sea-otter">Sea Otter</option>
+        <option value="wallaby">Wallaby</option>
+        <option value="chinchilla">Chinchilla</option>
+        <option value="python">Python</option>
+        <option value="crocodile">Crocodile</option>
       </select>
-      <input type="text" placeholder="Select Date(s)">
-      <input type="submit" value="Search" class="btn btn-success btn-lg circular">
+      <input id="start-date" type="date" placeholder="Select Start Date" class="input-lg">
+      <input id="end-date" type="date" placeholder="Select End Date" class="input-lg">
+      <input type="submit" value="Search" class="btn btn-success btn-round btn-lg">
     </form>
   </div>
 </div>
