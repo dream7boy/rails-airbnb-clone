@@ -5,4 +5,6 @@ class Pet < ApplicationRecord
   validates :name, uniqueness: true
 
   scope :species, -> (species) { where species: species }
+  scope :start_date, -> (start_date) { where start_date: start_date }
+  scope :end_date, -> (end_date) { where end_date: end_date }
 end
