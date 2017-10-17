@@ -1,8 +1,9 @@
 <div class="container">
-  <h1>List of Pets</h1>
+  <h2>List of Pets</h1>
+  <h3>from: <%= @start_date.strftime("%F") %> to: <%= @end_date.strftime("%F") %></h3>
     <ul>
       <% @pets.each do |pet| %>
-      <li><%= pet.name %> - <%= pet.species %> - <%= pet.description %></li>
+      <li><%= pet.name %> - <%= pet.species %> - <%= pet.description %> </li>
       <% end %>
     </ul>
 </div>
