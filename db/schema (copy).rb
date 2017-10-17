@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20171016085137) do
     t.string "name"
     t.string "species"
     t.text "description"
-    t.bigint "owner_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_pets_on_owner_id"
+    t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,5 +44,5 @@ ActiveRecord::Schema.define(version: 20171016085137) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "pets", "users", column: "owner_id"
+  add_foreign_key "pets", "users"
 end
