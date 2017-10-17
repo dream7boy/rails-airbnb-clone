@@ -1,6 +1,10 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-6 col-sm-offset-3 ">
+  <div class="new-form">
+      <h2 class="text-center">Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -9,9 +13,22 @@
     <%= f.input :password_confirmation, required: true %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Sign up", class: "btn btn-success btn-lrg", style: "width: 100%" %>
   </div>
-<% end %>
+  <% end %>
+  <br>
+  <div class="links text-center">
+    <%= render "devise/shared/links" %>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
 
-<%= render "devise/shared/links" %>
+<!--
+    <%#= simple_form_for(@pet) do |f| %>
+      <%#= f.input :species %>
+      <%#= f.submit %>
+    <%# end %>
+ -->
