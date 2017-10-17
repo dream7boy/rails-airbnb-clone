@@ -3,7 +3,7 @@
   <h3>from: <%= @start_date.strftime("%F") %> to: <%= @end_date.strftime("%F") %></h3>
     <ul>
       <% @pets.each do |pet| %>
-      <li><%= pet.name %> - <%= pet.species %> - <%= pet.description %> <%= link_to "details", pet_path(pet) %></li>
+      <li><%= pet.name %> - <%= pet.species %> <%= pet.description %> - yen <%= pet.daily_price %> per day <%= link_to "details", pet_path(pet) %></li>
       <% end %>
     </ul>
 </div>
