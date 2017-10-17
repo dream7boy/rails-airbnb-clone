@@ -26,6 +26,12 @@ body {
     font: $headers-font;
     margin-bottom: 50px;
   }
+  #select {
+    width: 400px;
+  }
+  #date {
+    margin: 10px;
+  }
 }
 
 .home-content {
@@ -33,7 +39,7 @@ body {
   ul {
     li {
       font: $body-font;
-      font-size: 28px; 
+      font-size: 28px;
       list-style: none;
       &:first-child {
         margin-top: 26px;

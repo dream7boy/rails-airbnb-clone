@@ -22,6 +22,10 @@ puts 'Creating database...'
       description: Faker::Color.color_name,
       start_date: start_random_date,
       end_date: start_random_date + rand(1..3),
+      daily_price: rand(5000..20000).round(-3),
+      age: rand(1..10),
+      gender: ["F", "M"].sample,
+      personality: ["calm", "active"].sample,
       owner_id: user.id
     )
     end
