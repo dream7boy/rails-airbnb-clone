@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017023503) do
+ActiveRecord::Schema.define(version: 20171017061319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20171017023503) do
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
     t.index ["owner_id"], name: "index_pets_on_owner_id"
   end
 
