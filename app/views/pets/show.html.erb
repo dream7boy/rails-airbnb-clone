@@ -1,13 +1,16 @@
 <div class="container">
   <h1>show page for <%= @pet.name %></h1>
   <ul>
+    <li>Age: <%= @pet.age %></li>
+    <li>Gender: <%= @pet.gender %></li>
+    <li>Personality: <%= @pet.personality %></li>
     <li>Description: <%= @pet.description %></li>
     <li>Daily rate: yen <%= @pet.daily_price %></li>
   </ul>
 
   <div>
       <%= link_to "Book", pets_path, class: "btn btn-success" %>
-   </div>
+  </div>
 
   <%= link_to "Back to lists", pets_path %>
 </div>
