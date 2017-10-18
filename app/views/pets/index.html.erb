@@ -1,9 +1,46 @@
-<div class="container">
-  <h2>List of Pets</h1>
-  <h3>from: <%= @start_date.strftime("%F") %> to: <%= @end_date.strftime("%F") %></h3>
-    <ul>
-      <% @pets.each do |pet| %>
-      <li><%= pet.name %> - <%= pet.species %> <%= pet.description %> - yen <%= pet.daily_price %> per day <%= link_to "details", pet_path(pet) %></li>
-      <% end %>
-    </ul>
+<div class="index-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <h1>Available <%= @pets.first.species %>s</h1>
+        <p>from <%= @start_date.strftime("%F") %> to <%= @end_date.strftime("%F") %></p>
+        <div class="container">
+          <div class="row">
+            <% @pets.each do |pet| %>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <%= link_to pet_path(pet) do %>
+                  <div class="card" style="background-image: url('<%= image_path "capybara.jpg" %>');">
+
+                      <div class="card-category"><%= pet.species %></div>
+                      <%#= link_to "a", pet_path(pet) %>
+                      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+                  </div>
+                <% end %>
+                <div class="card-content">
+                  <div class="card-description">
+                      <h2><%= link_to pet.name, pet_path(pet) %></h2>
+                      <p>100m from your location</p>
+                      <ul>
+                        <li class="fa fa-star marked"></li>
+                        <li class="fa fa-star marked"></li>
+                        <li class="fa fa-star marked"></li>
+                        <li class="fa fa-star marked"></li>
+                        <li class="fa fa-star"></li>
+                      </ul>
+                      <h4>¥<%= pet.daily_price %>/day</h4>
+                  </div>
+                </div>
+              </div>
+            <% end %>    
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div id="map" style="widh: 100%; " class="text-center">
+          <!-- Map comes here -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
