@@ -9,4 +9,7 @@ class Pet < ApplicationRecord
   scope :species, -> (species) { where species: species }
   scope :start_date, -> (start_date) { where start_date: start_date }
   scope :end_date, -> (end_date) { where end_date: end_date }
+
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 end

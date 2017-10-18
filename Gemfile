@@ -19,6 +19,7 @@ gem 'uglifier'
 gem 'devise'
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 gem 'omniauth-facebook'
+gem "geocoder"
 
 group :development, :test do
   gem 'pry-byebug'
