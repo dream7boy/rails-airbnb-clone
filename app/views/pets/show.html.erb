@@ -21,9 +21,9 @@
               <strong>Personality:</strong> <%= @pet.personality %><br />
             </li>
           </ul>
-          <h2>Reviews of this pets</h2>
+          <h2>Reviews of this pet</h2>
           <ul class="stars">
-            <li><p>Overall rates: </p></li>
+            <li><p>Overall rating: </p></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
@@ -65,17 +65,17 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="book-container">
+        <div class="book-container text-center">
           <h2>Rent <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Shoule be dynamically -->
           <hr>
           <div class="rental-dates">
             <form action="" method="get" accept-charset="utf-8">
               <div class="form-group">
-                <label for="">Rental Start Date: </label>
+                <label for="">Rental Start Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
               <div class="form-group">
-                <label for="">Rental End Date: </label>
+                <label for="">Rental End Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
               <%= link_to "Book", pets_path, class: "btn btn-primary", data: { confirm: 'Are you sure you wish to book this pet?' } %>
