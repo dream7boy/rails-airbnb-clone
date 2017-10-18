@@ -4,6 +4,16 @@ class PetsController < ApplicationController
     @start_date = DateTime.new(2017, 10, 3)
     @end_date = DateTime.new(2017, 10, 4)
     @pets = Pet.species("pokemon").start_date(@start_date).end_date(@end_date)
+
+    # @pets_map = Pet.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@pets) do |pet, marker|
+      marker.lat pet.latitude
+      puts pet.latitude
+      marker.lng pet.longitude
+      puts
+    end
+    # byebug
   end
 
   def show

@@ -3,7 +3,29 @@
   <h3>from: <%= @start_date.strftime("%F") %> to: <%= @end_date.strftime("%F") %></h3>
     <ul>
       <% @pets.each do |pet| %>
-      <li><%= pet.name %> - <%= pet.species %> <%= pet.description %> - yen <%= pet.daily_price %> per day <%= link_to "details", pet_path(pet) %></li>
+      <li><%= pet.name %> - <%= pet.species %> <%= pet.description %> - yen <%= pet.daily_price %> per day
+        <br>
+      <%= pet.location %>(lat:<%= pet.latitude %>, lng:<%= pet.longitude %>)<%= link_to "details", pet_path(pet) %></li><br>
       <% end %>
     </ul>
+
+    <div id="map" style="width: 600px; height: 400px;"></div>
+
+    <% content_for(:after_js) do %>
+      <%= javascript_tag do %>
+        $(document).ready(function() {
+          var handler = Gmaps.build('Google');
+          handler.buildMap({ internal: { id: 'map' } }, function() {
+            markers = handler.addMarkers(<%= raw @hash.to_json %>);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+            if (markers.length == 0) {
+              handler.getMap().setZoom(2);
+            } else if (markers.length == 1) {
+              handler.getMap().setZoom(14);
+            }
+          });
+        });
+      <% end %>
+    <% end %>
 </div>
