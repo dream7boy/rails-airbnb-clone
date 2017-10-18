@@ -8,6 +8,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @booking = @pet.bookings.build
   end
 
   def new
