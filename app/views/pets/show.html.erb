@@ -72,7 +72,7 @@
                 <label for="" id="label-date">Rental End Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
-              <%= link_to "Book", pets_path, class: "btn btn-primary" %>
+              <%= link_to "Book", pets_path, class: "btn btn-primary", data: { confirm: 'Are you sure you wish to book this pet?'} %>
             </form>
           </div>
         </div>
