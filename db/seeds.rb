@@ -19,7 +19,7 @@ puts 'Creating database...'
     start_random_date = DateTime.new(2017, 10, rand(1..3))
     pet = Pet.create(
       name: Faker::Pokemon.name,
-      species: ["dog", "pokemon"].sample,
+      species: ["dog", "crocodile"].sample,
       description: Faker::Color.color_name,
       start_date: start_random_date,
       end_date: start_random_date + rand(1..3),
