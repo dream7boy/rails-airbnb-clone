@@ -31,6 +31,7 @@ class PetsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@pets) do |pet, marker|
       marker.lat pet.latitude
       marker.lng pet.longitude
+      marker.infowindow render_to_string(partial: "/pets/map_box", locals: { pet: pet })
     end
   end
 
