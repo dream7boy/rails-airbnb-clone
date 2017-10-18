@@ -5,12 +5,16 @@ class PetsController < ApplicationController
     # @end_date = DateTime.new(2017, 10, 4)
     # @pets = Pet.species(params[:pet_species]).start_date(@start_date).end_date(@end_date)
 
-    if params[:species]
-      @pets = Pet.where('species LIKE ?', "%#{params[:species]}%")
-      # @pets = Pet.where('species LIKE ?', "%#{params[:start_date]}%")
+    if params[:start_date].present? && params[:end_date].present?
+      @pets = Pet.where('species LIKE ? AND start_date = ? AND end_date = ?',
+      "%#{params[:species]}%", "%#{params[:start_date]}%", "%#{params[:end_date]}%")
+      # @pets = Pet.where('start_date = ?', "%#{params[:start_date]}%")
+      # @pets = Pet.where('start_date LIKE ?', "%#{params[:start_date]}%")
     else
       @pets = Pet.all
+      flash[:alert] = "No specific dates chosen"
     end
+    # raise
 
     # if params[:start_date]
     #   @pets = Pet.where('start_date LIKE ?', "%#{params[:start_date]}%")
@@ -24,8 +28,8 @@ class PetsController < ApplicationController
     #   @pets = Pet.all
     # end
 
-    @start_date = DateTime.new(2017, 10, 3)
-    @end_date = DateTime.new(2017, 10, 5)
+    # @start_date = DateTime.new(2017, 10, 3)
+    # @end_date = DateTime.new(2017, 10, 5)
     # @pets = Pet.species("crocodile").start_date(@start_date).end_date(@end_date)
 
     @hash = Gmaps4rails.build_markers(@pets) do |pet, marker|

@@ -5,8 +5,12 @@
   <div class="card-wrapper">
   <div class="container">
     <div class="row">
-        <h1>Available <%= @pets.first.species %>s</h1>
-        <p>from <%= @start_date.strftime("%F") %> to <%= @end_date.strftime("%F") %></p>
+        <h1>Available <%= params[:species] %>s</h1>
+        <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
+        <% if @pets.count == 0 %>
+          <h3>Sorry, nothing on these dates</h3>
+          <%= link_to "Back to search", root_path %>
+        <% end %>
 
             <% @pets.each do |pet| %>
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
