@@ -1,6 +1,8 @@
 @import "show";
 
 .index-container {
+  display: flex;
+  justify-content: space-around;
   .card {
     margin-top: 24px;
     height: 240px;
@@ -73,6 +75,15 @@
       opacity: 0.1;
     }
   }
+}
+#map {
+
+  // flex: 0 0 450px;
+  height: 400px;
+  width: 100%;
+  // position: sticky;
+  // top: 0;
+  // right: 0;
 }
 
 .card-content {
