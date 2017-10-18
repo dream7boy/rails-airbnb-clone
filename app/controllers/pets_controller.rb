@@ -32,15 +32,11 @@ class PetsController < ApplicationController
     # @end_date = DateTime.new(2017, 10, 5)
     # @pets = Pet.species("crocodile").start_date(@start_date).end_date(@end_date)
 
-
-    # if params[:start_date] == ""
-
-    # else
-      @hash = Gmaps4rails.build_markers(@pets) do |pet, marker|
-        marker.lat pet.latitude
-        marker.lng pet.longitude
-      end
-    # end
+    @hash = Gmaps4rails.build_markers(@pets) do |pet, marker|
+      marker.lat pet.latitude
+      marker.lng pet.longitude
+      marker.infowindow render_to_string(partial: "/pets/map_box", locals: { pet: pet })
+    end
   end
 
   def show
