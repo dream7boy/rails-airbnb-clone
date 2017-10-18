@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking = @pet.bookings.build(booking_params)
     @booking.status = "Pending"
     @booking.booker = current_user
-    byebug
+    # byebug
     if @booking.save
       redirect_to @pet
     else

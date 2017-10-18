@@ -1,9 +1,28 @@
-<div class="container">
-  <h2>Booking</h2>
-  <%= simple_form_for [@pet, @booking] do |f| %>
-    <%= f.input :duration, input_html: { value: @duration } %>
-    <%= f.input :total_price, input_html: { value: @total_price } %>
-    <%#= f.hidden_field :cocktail_id, value: @cocktail.id %>
-    <%= f.submit "Book", class: "btn btn-primary" %>
-  <% end %>
+<div class="booking-container">
+  <div class="container">
+  <br>
+  <div class="row">
+    <div class="col-xs-12 col-sm-7" id="payment-info">
+      <h2 class="text-center">Payment Information</h2>
+        <%= simple_form_for :user, url: user_session_path do |f| %>
+          <%= f.input :name, as: :string %>
+          <%= f.input :country, as: :string %>
+          <%= f.input :card_type, selected: "Visa", collection: ["Visa", "Mastercard", "American Express"] %>
+          <%= f.input :card_number, as: :string %>
+          <%= f.input :expires_on, placeholder: "mm/yyyy" %>
+          <%= f.input :security_code, as: :string %>
+        <% end %>
+    </div>
+      <div class="col-xs-12 col-sm-4" id="booking-details">
+        <h2 class="text-center">Booking Details</h2>
+          <%= simple_form_for [@pet, @booking] do |f| %>
+            <%= f.input :duration, input_html: { value: @duration } %>
+            <%= f.input :total_price, input_html: { value: @total_price } %>
+            <%#= f.hidden_field :cocktail_id, value: @cocktail.id %>
+            <br>
+            <%= f.submit "Confirm payment", class: "btn btn-success btn-lg", style: "width: 100%" %>
+          <% end %>
+    </div>
+  </div>
+  </div>
 </div>
