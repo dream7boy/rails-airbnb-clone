@@ -1,3 +1,4 @@
+
 body {
   background: white;
 }
@@ -7,7 +8,6 @@ body {
   text-align: center;
   height: calc(100vh - 170px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('capybara.jpg');
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -35,15 +35,26 @@ body {
 }
 
 .home-content {
-  padding: 30px 30px 250px 30px;
-  ul {
-    li {
+  padding: 30px;
+  padding-top: 0px;
+  .input-lg {
+    padding: 10px;
+  }
+  // ul {
+  //   li {
+    p {
       font: $body-font;
       font-size: 28px;
       list-style: none;
-      &:first-child {
-        margin-top: 26px;
-      }
+      padding-left: 0px;
+      padding-top: 0px;
+      // &:first-child {
+      //   margin-top: 30px;
+      // }
     }
-  }
+        #first-paragraph {
+        margin-top: 30px;
+      }
+  //   }
+  // }
 }

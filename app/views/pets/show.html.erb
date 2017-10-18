@@ -1,10 +1,10 @@
 <div class="show-container">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-8"> 
+      <div class="col-xs-12 col-sm-8">
         <div>
-          <h1><%= @pet.name %><%#= @pet.name %></h1>
-          <%= image_tag "capybara.jpg", class: "show-image" %></p> <!-- changed to dynamically -->
+          <h1 class="text-center">Mr. <%= @pet.name %><%#= @pet.name %></h1>
+          <%= image_tag "crocodile_review.jpg", class: "show-image text-center" %></p> <!-- changed to dynamically -->
         </div>
         <div class="pets-content">
           <h2>The Creature</h2>
@@ -12,7 +12,7 @@
           <h2>Details</h2>
           <ul>
             <li>
-              <strong>Gender:</strong> <%= @pet.gender %><br />         
+              <strong>Gender:</strong> <%= @pet.gender %><br />
             </li>
             <li>
               <strong>Age:</strong> <%= @pet.age %> years old<br />
@@ -21,64 +21,56 @@
               <strong>Personality:</strong> <%= @pet.personality %><br />
             </li>
           </ul>
-          <h2>Reviews of this pets</h2>
+          <h2>Reviews of this pet</h2>
           <ul class="stars">
-            <li><p>Overall rates: </p></li>
+            <li><p>Overall rating: </p></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star"></i></li>
-            <li>100 reviews</li>
+            <li>23 reviews</li>
           </ul>
           <div class="review">
-            <h4>Review title</h4>
+            <h4>Looks scary but he's a big softy!</h4>
             <ul class="stars">
-              <li><img src="http://placehold.it/50x50" class="avatar"></li>
+              <li><%= image_tag "debbie.jpg", class: "avatar" %></li>
               <li><i class="fa fa-star marked"></i></li>
               <li><i class="fa fa-star marked"></i></li>
               <li><i class="fa fa-star marked"></i></li>
               <li><i class="fa fa-star marked"></i></li>
               <li><i class="fa fa-star"></i></li>
-              <li>100 reviews</li>
             </ul>
-            <p>Review content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.</p>
+            <p>Beautiful, intelligent creature. I booked this exotic animal for a week while on his owner was on vacation and it was the best decision I've ever made. While he looks fearsome, he is actually very gentle and easy-going, and would lie on my lap and let me rub his belly. On sunny days, I would put a leash on him and take him on walks around the neighborhood. I got so much attention from strangers who wanted to pet him and take pictures with him and met many new friends just by taking him around town! Definitely will be renting him again when I get the chance.</p>
           </div><div class="review">
-            <h4>Review title</h4>
+            <h4>Renting him made me the star of my town!</h4>
             <ul class="stars">
-              <li><img src="http://placehold.it/50x50" class="avatar"></li>
-              <li><i class="fa fa-star marked"></i></li>
+              <li><%= image_tag "paul.jpg", class: "avatar" %></li>
               <li><i class="fa fa-star marked"></i></li>
               <li><i class="fa fa-star marked"></i></li>
               <li><i class="fa fa-star marked"></i></li>
               <li><i class="fa fa-star"></i></li>
-              <li>100 reviews</li>
+              <li><i class="fa fa-star"></i></li>
             </ul>
-            <p>Review content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.</p>
+            <p>Expensive daily rate, but so worth it. I got tons of awesome Instagram pictures while I rented him and so many likes and new followers. All of my friends wanted to hang out with me so that they could see him, pet him, take pictures with him, etc. Got a bunch of cool perks too - freebies in restaurants and cafes for attracting hordes of customers to their establishments, free admission to zoos and museums, even a chance meeting with the town mayor! Daily life with this creature by my side was so exciting.</p>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4"> 
-        <div class="book-container">
-          <h2>Rent <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Shoule be dynamically -->
+      <div class="col-xs-12 col-sm-4">
+        <div class="book-container text-center">
+          <h2>Rent Mr. <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Shoule be dynamically -->
           <hr>
           <div class="rental-dates">
             <form action="" method="get" accept-charset="utf-8">
               <div class="form-group">
-                <label for="">Rental Start Date: </label>
+                <label for="" id="label-date">Rental Start Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
               <div class="form-group">
-                <label for="">Rental End Date: </label>
+                <label for="" id="label-date">Rental End Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
-              <%= link_to "Book", pets_path, class: "btn btn-primary" %>
+              <%= link_to "Book", pets_path, class: "btn btn-primary", data: { confirm: 'The message is sent to the owner. Please wait for his/her response for a while.'} %>
             </form>
           </div>
         </div>

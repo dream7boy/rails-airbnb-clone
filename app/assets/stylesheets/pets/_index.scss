@@ -1,1 +1,94 @@
 @import "show";
+
+.index-container {
+  display: flex;
+  justify-content: space-around;
+  .card {
+    margin-top: 24px;
+    height: 240px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    background-size: cover !important;
+    background-position: center;
+    color: white;
+    position: relative;
+    border-radius: 3px 3px 0 0;
+
+  }
+  .card-user {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  .card-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .card-description {
+    padding: 0 0 0 10px;
+    position: relative;
+    ul {
+      padding: 0;
+      .marked {
+        color: #F4BC2B;
+      }
+    }
+    h2 {
+      margin: 10px 0 0 0;
+      font-size: 36px;
+    }
+    a {
+      color: black;
+      opacity: 1.0;
+      &:hover {
+        text-decoration: none;
+        opacity: 0.8;
+      }
+    }
+    p {
+      font-size: 14px;
+      opacity: 0.7;
+      font-weight: lighter;
+    }
+    h4 {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      right: 5px;
+      bottom: 0;
+    }
+  }
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    background: black;
+    opacity: 0;
+    &:hover {
+      opacity: 0.1;
+    }
+  }
+}
+#map {
+
+  // flex: 0 0 450px;
+  height: 400px;
+  width: 100%;
+  // position: sticky;
+  // top: 0;
+  // right: 0;
+}
+
+.card-content {
+  margin-top: -2px;
+  padding: 10px;
+  border: solid 1px #C6C7C9;
+  border-radius: 0 0 3px 3px;
+}

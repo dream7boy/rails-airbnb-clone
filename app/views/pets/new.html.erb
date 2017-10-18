@@ -1,32 +1,33 @@
-<h1 class="text-center col-xs-12">Add new pet</h1>
+<h1 class="text-center col-xs-12">Add a new pet</h1>
+<div class="new-pet-container">
+  <div class="container">
+    <div class="row col-xs-12">
 
-<div class="container">
-  <div class="row col-xs-12">
+        <%= simple_form_for(@pet) do |f| %>
 
-      <%= simple_form_for(@pet) do |f| %>
-
-        <% if @pet.errors.any? %>
-          <div>
-            <p>Errors</p>
-            <ul>
-              <% @pet.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
+          <% if @pet.errors.any? %>
+            <div>
+              <p>Errors</p>
+              <ul>
+                <% @pet.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.input :start_date, id: "start-date", class: "form-inline inline" %>
+          <%= f.input :end_date, id: "end-date", class: "form-inline inline" %>
+          <%= f.input :name %>
+          <%= f.input :species, collection: ["Iguana", "Hedgehog", "Owl", "Capybara", "Chameleon", "Fennec", "Sea Otter", "Wallaby", "Chinchilla", "Python", "Crocodile"] %>
+          <%= f.input :daily_price %>
+          <%= f.input :description %>
+          <%= f.input :age %>
+          <%= f.input :gender, collection: ["Male", "Female"] %>
+          <%= f.input :personality %>
+          <br>
+          <%= f.submit "Submit", class: "btn btn-primary btn-success btn-lg", style: "width: 100%" %>
         <% end %>
 
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :name %>
-        <%= f.input :species %>
-        <%= f.input :daily_price %>
-        <%= f.input :description %>
-        <%= f.input :age %>
-        <%= f.input :gender %>
-        <%= f.input :personality %>
-        <%= f.submit "Submit", class: "btn btn-primary"%>
-      <% end %>
-
+    </div>
   </div>
 </div>
