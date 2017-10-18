@@ -40,21 +40,19 @@ body {
   .input-lg {
     padding: 10px;
   }
-  // ul {
-  //   li {
-    p {
-      font: $body-font;
-      font-size: 28px;
-      list-style: none;
-      padding-left: 0px;
-      padding-top: 0px;
-      // &:first-child {
-      //   margin-top: 30px;
-      // }
-    }
-        #first-paragraph {
-        margin-top: 30px;
-      }
-  //   }
-  // }
+  p {
+    font: $body-font;
+    font-size: 28px;
+    list-style: none;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+  #first-paragraph {
+    margin-top: 30px;
+  }
+}
+
+.form-top {
+  color: black;
+  border: none;
 }
