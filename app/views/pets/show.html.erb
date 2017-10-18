@@ -1,7 +1,7 @@
 <div class="show-container">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-8"> 
+      <div class="col-xs-12 col-sm-8">
         <div>
           <h1><%= @pet.name %><%#= @pet.name %></h1>
           <%= image_tag "capybara.jpg", class: "show-image" %></p> <!-- changed to dynamically -->
@@ -12,7 +12,7 @@
           <h2>Details</h2>
           <ul>
             <li>
-              <strong>Gender:</strong> <%= @pet.gender %><br />         
+              <strong>Gender:</strong> <%= @pet.gender %><br />
             </li>
             <li>
               <strong>Age:</strong> <%= @pet.age %> years old<br />
@@ -21,9 +21,9 @@
               <strong>Personality:</strong> <%= @pet.personality %><br />
             </li>
           </ul>
-          <h2>Reviews of this pets</h2>
+          <h2>Reviews of this pet</h2>
           <ul class="stars">
-            <li><p>Overall rates: </p></li>
+            <li><p>Overall rating: </p></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
@@ -64,18 +64,18 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4"> 
-        <div class="book-container">
+      <div class="col-xs-12 col-sm-4">
+        <div class="book-container text-center">
           <h2>Rent <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Shoule be dynamically -->
           <hr>
           <div class="rental-dates">
             <form action="" method="get" accept-charset="utf-8">
               <div class="form-group">
-                <label for="">Rental Start Date: </label>
+                <label for="">Rental Start Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
               <div class="form-group">
-                <label for="">Rental End Date: </label>
+                <label for="">Rental End Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
               <%= link_to "Book", pets_path, class: "btn btn-primary" %>
