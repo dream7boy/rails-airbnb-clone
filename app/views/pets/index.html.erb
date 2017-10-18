@@ -8,16 +8,17 @@
           <div class="row">
             <% @pets.each do |pet| %>
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card" style="background-image: url('<%= image_path "capybara.jpg" %>');">
+                <%= link_to pet_path(pet) do %>
+                  <div class="card" style="background-image: url('<%= image_path "capybara.jpg" %>');">
 
-                    <div class="card-category"><%= pet.species %></div>
-                    <%= link_to "", pet_path(pet) %>
-                    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-                    <a class="card-link" href="#" ></a>  
-                </div>
+                      <div class="card-category"><%= pet.species %></div>
+                      <%#= link_to "a", pet_path(pet) %>
+                      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+                  </div>
+                <% end %>
                 <div class="card-content">
                   <div class="card-description">
-                      <h2><%= pet.name %></h2>
+                      <h2><%= link_to pet.name, pet_path(pet) %></h2>
                       <p>100m from your location</p>
                       <ul>
                         <li class="fa fa-star marked"></li>
