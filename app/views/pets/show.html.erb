@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8">
         <div>
-          <h1><%= @pet.name %><%#= @pet.name %></h1>
-          <%= image_tag "capybara.jpg", class: "show-image" %></p> <!-- changed to dynamically -->
+          <h1 class="text-center">Mr. <%= @pet.name %><%#= @pet.name %></h1>
+          <%= image_tag "capybara.jpg", class: "show-image text-center" %></p> <!-- changed to dynamically -->
         </div>
         <div class="pets-content">
           <h2>The Creature</h2>
@@ -21,9 +21,9 @@
               <strong>Personality:</strong> <%= @pet.personality %><br />
             </li>
           </ul>
-          <h2>Reviews of this pets</h2>
+          <h2>Reviews of this pet</h2>
           <ul class="stars">
-            <li><p>Overall rates: </p></li>
+            <li><p>Overall rating: </p></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
             <li><i class="fa fa-star marked"></i></li>
@@ -65,20 +65,20 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="book-container">
-          <h2>Rent <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Shoule be dynamically -->
+        <div class="book-container text-center">
+          <h2>Rent Mr. <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Shoule be dynamically -->
           <hr>
           <div class="rental-dates">
             <form action="" method="get" accept-charset="utf-8">
               <div class="form-group">
-                <label for="">Rental Start Date: </label>
+                <label for="" id="label-date">Rental Start Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
               <div class="form-group">
-                <label for="">Rental End Date: </label>
+                <label for="" id="label-date">Rental End Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
-              <%= link_to "Book", pets_path, class: "btn btn-primary", data: { confirm: 'Are you sure you wish to book this pet?' } %>
+              <%= link_to "Book", pets_path, class: "btn btn-primary" %>
             </form>
           </div>
         </div>
@@ -87,5 +87,3 @@
     </div>
   </div>
 </div>
-
-
