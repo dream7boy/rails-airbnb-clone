@@ -1,11 +1,13 @@
-        <div id="map"></div>
+
+<div id="map"></div>
+
 <div class="index-container">
   <div class="card-wrapper">
   <div class="container">
     <div class="row">
         <h1>Available <%= @pets.first.species %>s</h1>
         <p>from <%= @start_date.strftime("%F") %> to <%= @end_date.strftime("%F") %></p>
-        
+
             <% @pets.each do |pet| %>
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <%= link_to pet_path(pet) do %>
@@ -34,7 +36,6 @@
             <% end %>
       </div>
     </div>
-  <!-- </div> -->
 </div>
 
 <% content_for(:after_js) do %>

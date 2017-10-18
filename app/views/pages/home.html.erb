@@ -1,10 +1,10 @@
 <div class="banner" style="background-image: url('<%= image_path "capybara.jpg" %>');">
   <div class="banner-content text-center">
     <h1>Search for an Exotic Pet</h1>
-    <form action="" style="color: black">
+    <form action="/pets" style="color: black">
       <select id="select" value="Select Species" class="input-lg"> <!--Supplement an id here instead of using 'name'-->
         <option value="select">Select Species</option>
-        <option value="iguana">Iguana</option>
+        <option value="dog">dog</option>
         <option value="hedgehog">Hedgehog</option>
         <option value="owl">Owl</option>
         <option value="capybara">Capybara</option>
@@ -20,6 +20,20 @@
       <input id="end-date" type="date" placeholder="Select End Date" class="input-lg">
       <input type="submit" value="Search" class="btn btn-success btn-round btn-lg input-lg">
     </form>
+
+    <%= form_tag(pets_path, method: :get) do %>
+      <%#= text_field_tag :species, params[:species] %>
+      <%= select_tag "species", raw("<option>dog</option><option>crocodile</option>") %>
+      <%= date_field_tag :start_date, params[:start_date] %>
+      <%= date_field_tag :end_date, params[:end_date] %>
+      <%= submit_tag 'Search', name: nil %>
+    <% end %>
+
+    <%#= simple_form_for @pet, url: pets_path, method: :get do |f| %>
+      <%#= f.input :species, collection: @SPECIES %>
+      <%#= f.submit "submit", class: "btn btn-primary"%>
+    <%# end %>
+
   </div>
 </div>
 <div class="home-content text-center">
