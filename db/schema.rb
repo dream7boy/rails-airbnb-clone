@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018023746) do
+ActiveRecord::Schema.define(version: 20171018030530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20171018023746) do
     t.integer "age"
     t.string "gender"
     t.string "personality"
+    t.string "location"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["owner_id"], name: "index_pets_on_owner_id"
   end
 
