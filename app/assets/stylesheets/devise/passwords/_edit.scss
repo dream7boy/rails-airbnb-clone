@@ -1,0 +1,25 @@
+.password-container {
+  margin-top: 70px;
+  color: $green;
+  h2 {
+    margin-bottom: 24px;
+  }
+  p {
+    margin: 0;
+  }
+  .new-form {
+    border: $green solid 1px;
+    border-radius: 50px;
+    padding: 30px 50px 50px 50px;
+  }
+  .links {
+    margin-top: 20px;
+    color: $green;
+    a.btn {
+      &:hover {
+        color: $green;
+        text-decoration: underline;
+      }
+    }
+  }
+}
