@@ -19,7 +19,14 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    @booking = @pet.bookings.build
+    @user = current_user
+
+    @booked = false
+    @user.bookings.each do |booking|
+      @booked = true if booking.pet_id == @pet.id
+    end
+
+    @is_owner = (@user.id == @pet.owner_id) ? true : false
   end
 
   def new
@@ -41,7 +48,7 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:start_date, :end_date,
       :name, :species, :daily_price, :description, :age,
-      :gender, :personality, :photo, :photo_cache)
+      :gender, :personality, :location, :photo, :photo_cache)
   end
 
   def search_params
