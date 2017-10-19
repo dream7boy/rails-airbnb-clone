@@ -4,6 +4,7 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+//= require js-datepicker/datepicker.min
 //= require_tree .
 
 
