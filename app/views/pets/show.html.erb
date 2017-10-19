@@ -64,20 +64,20 @@
             <form action="" method="get" accept-charset="utf-8">
               <div class="form-group">
                 <label for="" id="label-date">Rental Start Date:  </label>
-                <input type="date" class="rent-input-field" value="<%= @pet.start_date %>" id="rental-start-date" onchange="handler(event);">
+                <input type="date" class="rent-input-field" value="<%= @pet.start_date %>" id="rental-start-date">
               </div>
               <div class="form-group">
                 <label for="" id="label-date">Rental End Date:  </label>
-                <input type="date" class="rent-input-field" value="<%= @pet.end_date %>" id="rental-end-date" onchange="handler(event);">
+                <input type="date" class="rent-input-field" value="<%= @pet.end_date %>" id="rental-end-date">
               </div>
               <br>
                 <h5>Total Cost:</h5>
-                <h5>¥ <%= @pet.daily_price %> * <%= @pet.end_date.day - @pet.start_date.day %>
-                <% if (@pet.end_date.day - @pet.start_date.day) > 1 %>
-                  <%= "days" %>
-                <% else %>
-                  <%= "day" %>
-                <% end %> = ¥ <%= @pet.daily_price * (@pet.end_date.day - @pet.start_date.day) %></h5>
+                <h5 data-price="<%= @pet.daily_price %>" id="total-cost">¥ <%= @pet.daily_price %> * <%= @pet.end_date.day - @pet.start_date.day + 1 %>
+                <% if (@pet.end_date.day - @pet.start_date.day + 1) > 1 %>
+                    <%= "days" %>
+                    <% else %>
+                    <%= "day" %>
+                    <% end %> = ¥ <%= @pet.daily_price * (@pet.end_date.day - @pet.start_date.day + 1) %></h5>
                 
                 <% if @is_owner %>
                   <button type="button" class="btn btn-lg btn-primary" disabled>Your Pet!</button>
