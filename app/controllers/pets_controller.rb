@@ -22,11 +22,16 @@ class PetsController < ApplicationController
     @user = current_user
 
     @booked = false
-    @user.bookings.each do |booking|
-      @booked = true if booking.pet_id == @pet.id
+    @is_owner = false
+
+    unless @user.nil?
+      @user.bookings.each do |booking|
+        @booked = true if booking.pet_id == @pet.id
+      end
+      @is_owner = true if @user.id == @pet.owner_id
     end
 
-    @is_owner = (@user.id == @pet.owner_id) ? true : false
+    # @is_owner = (@user.id == @pet.owner_id) ? true : false
   end
 
   def new
