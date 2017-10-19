@@ -72,7 +72,13 @@
                 <label for="" id="label-date">Rental End Date:  </label>
                 <input type="date" class="rent-input-field">
               </div>
-              <%= link_to "Book", pets_path, class: "btn btn-primary", data: { confirm: 'The message is sent to the owner. Please wait for his/her response for a while.'} %>
+              <% if @is_owner %>
+                <button type="button" class="btn btn-lg btn-primary" disabled>Your Pet!</button>
+              <% elsif @booked == false %>
+                <%= link_to "Book", new_pet_booking_path(@pet), class: "btn btn-primary", data: { confirm: 'The message is sent to the owner. Please wait for his/her response for a while.'} %>
+              <% elsif @booked %>
+                <button type="button" class="btn btn-lg btn-primary" disabled>Booked by You</button>
+              <% end %>
             </form>
           </div>
         </div>
