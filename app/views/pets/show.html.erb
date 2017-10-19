@@ -74,11 +74,18 @@
                 <h5>Total Cost:</h5>
                 <h5>¥ <%= @pet.daily_price %> * <%= @pet.end_date.day - @pet.start_date.day %>
                 <% if (@pet.end_date.day - @pet.start_date.day) > 1 %>
-                    <%= "days" %>
-                    <% else %>
-                    <%= "day" %>
-                    <% end %> = ¥ <%= @pet.daily_price * (@pet.end_date.day - @pet.start_date.day) %></h5>
-              <%= link_to "BOOK", new_pet_booking_path(@pet), class: "btn btn-success btn-lg", data: { confirm: 'The message is sent to the owner. Please wait for his/her response for a while.'} %>
+                  <%= "days" %>
+                <% else %>
+                  <%= "day" %>
+                <% end %> = ¥ <%= @pet.daily_price * (@pet.end_date.day - @pet.start_date.day) %></h5>
+
+                <% if @is_owner %>
+                  <button type="button" class="btn btn-lg btn-primary" disabled>Your Pet!</button>
+                <% elsif @booked == false %>
+                  <%= link_to "Book", new_pet_booking_path(@pet), class: "btn btn-primary", data: { confirm: 'The message is sent to the owner. Please wait for his/her response for a while.'} %>
+                <% elsif @booked %>
+                  <button type="button" class="btn btn-lg btn-primary" disabled>Booked by You</button>
+                <% end %>
             </form>
           </div>
         </div>
