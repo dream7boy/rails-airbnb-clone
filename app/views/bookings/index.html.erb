@@ -16,7 +16,7 @@
 
     <ul>
 <!--     <li>ID | name |total_$$| start_date | end_date |duration|owner_email|status</li> -->
-    <% @user.bookings.each do |booking| %>
+    <% @user.bookings.reverse.each do |booking| %>
       <li>
     <div class="product">
 <!--   <div class='product-upvote'>
