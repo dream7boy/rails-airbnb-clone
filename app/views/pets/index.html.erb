@@ -6,47 +6,49 @@
 
 <div class="index-container">
   <div class="card-wrapper">
-  <div class="container">
-    <div class="row">
-        <h1>Available <%= params[:species] %>s</h1>
-        <% unless (params[:start_date].nil? || params[:start_date].nil?) %>
-            <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
-        <% end %>
-        <% if @pets.count == 0 %>
-          <h3>Sorry, no available <%= params[:species] %> on these dates</h3>
-          <%= link_to "Back to search", root_path, class: "btn btn-success" %>
-        <% end %>
+    <div class="container">
+      <div class="row">
+        <div class="titles">
+          <h1>Available <%= params[:species] %>s</h1>
+          <% unless (params[:start_date].nil? || params[:start_date].nil?) %>
+              <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
+          <% end %>
+          <% if @pets.count == 0 %>
+            <h3>Sorry, no available <%= params[:species] %> on these dates</h3>
+            <%= link_to "Back to search", root_path, class: "btn btn-success" %>
+          <% end %>
+        </div>
+        <% @pets.each do |pet| %>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <%= link_to pet_path(pet) do %>
+              <div class="card" style="background-image: url('<%= cl_image_path pet.photo  %>');">
 
-            <% @pets.each do |pet| %>
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <%= link_to pet_path(pet) do %>
-                  <div class="card" style="background-image: url('<%= cl_image_path pet.photo  %>');">
+                
 
-                    
-
-                      <div class="card-category"><%= pet.species %></div>
-                      <%#= link_to "a", pet_path(pet) %>
-                      <%= image_tag "crocodile_review.jpg", class: "card-user" %>
-                  </div>
-                <% end %>
-                <div class="card-content">
-                  <div class="card-description">
-                      <h2><%= link_to pet.name, pet_path(pet) %></h2>
-                      <p>100m from your location</p>
-                      <ul>
-                        <li class="fa fa-star marked"></li>
-                        <li class="fa fa-star marked"></li>
-                        <li class="fa fa-star marked"></li>
-                        <li class="fa fa-star marked"></li>
-                        <li class="fa fa-star"></li>
-                      </ul>
-                      <h4>¥<%= pet.daily_price %>/day</h4>
-                  </div>
-                </div>
+                  <div class="card-category"><%= pet.species %></div>
+                  <%#= link_to "a", pet_path(pet) %>
+                  <%= image_tag "crocodile_review.jpg", class: "card-user" %>
               </div>
             <% end %>
+            <div class="card-content">
+              <div class="card-description">
+                  <h2><%= link_to pet.name, pet_path(pet) %></h2>
+                  <p>100m from your location</p>
+                  <ul>
+                    <li class="fa fa-star marked"></li>
+                    <li class="fa fa-star marked"></li>
+                    <li class="fa fa-star marked"></li>
+                    <li class="fa fa-star marked"></li>
+                    <li class="fa fa-star"></li>
+                  </ul>
+                  <h4>¥<%= pet.daily_price %>/day</h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
+  </div>
 </div>
 
 <% content_for(:after_js) do %>
