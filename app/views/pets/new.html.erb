@@ -1,33 +1,30 @@
-<h1 class="text-center col-xs-12">Add a new pet</h1>
 <div class="new-pet-container">
   <div class="container">
-    <div class="row col-xs-12">
-
-        <%= simple_form_for(@pet) do |f| %>
-
-          <% if @pet.errors.any? %>
-            <div>
-              <p>Errors</p>
-              <ul>
-                <% @pet.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-          <%= f.input :start_date, id: "start-date", class: "form-inline inline" %>
-          <%= f.input :end_date, id: "end-date", class: "form-inline inline" %>
-          <%= f.input :name %>
-          <%= f.input :species, collection: ["Iguana", "Hedgehog", "Owl", "Capybara", "Chameleon", "Fennec", "Sea Otter", "Wallaby", "Chinchilla", "Python", "Crocodile"] %>
-          <%= f.input :daily_price %>
-          <%= f.input :description %>
-          <%= f.input :age %>
-          <%= f.input :gender, collection: ["Male", "Female"] %>
-          <%= f.input :personality %>
-          <br>
-          <%= f.submit "Submit", class: "btn btn-primary btn-success btn-lg", style: "width: 100%" %>
+    <div class="row col-xs-12 col-sm-8 col-sm-offset-2">
+      <h1>Add a new pet</h1>
+      <%= simple_form_for(@pet) do |f| %>
+        <% if @pet.errors.any? %>
+          <div>
+            <p>Errors</p>
+            <ul>
+              <% @pet.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-
+        <%= f.input :start_date, id: "start-date" %>
+        <%= f.input :end_date, id: "end-date" %>
+        <%= f.input :name, placeholder: "eg) Mr. Hedgehog" %>
+        <%= f.input :species, collection: ["Iguana", "Hedgehog", "Owl", "Capybara", "Chameleon", "Fennec", "Sea Otter", "Wallaby", "Chinchilla", "Python", "Crocodile"] %>
+        <%= f.input :description, placeholder: "eg) Mr. Hedgehog is super friendly..." %>
+        <%= f.input :age %>
+        <%= f.input :gender, collection: ["Male", "Female"] %>
+        <%= f.input :personality, placeholder: "eg) Acitve" %>
+        <%= f.input :daily_price, imput_html: { min: '0' }, placeholder: "eg) ¥1,000/day" %>
+        
+        <%= f.submit "Submit", class: "btn btn-primary btn-success btn-lg", style: "width: 100%" %>
+      <% end %>
     </div>
   </div>
 </div>
