@@ -30,13 +30,14 @@ body {
     justify-content: space-between;
     align-item: center;
     #start_date, #end_date {
-      width: 220px;
+      width: 230px;
     }
     input {
-      padding: 0 5px;
+      margin: 0 5px;
     }
     .btn {
       padding: 0 24px;
+      border-radius: 5px;
     }
   }
 }
