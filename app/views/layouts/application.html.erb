@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title><%= yield(:title_tag).blank? ? "Pexotic | Search and rend exotic pets" : yield(:title_tag) %></title>
+    <!-- Check it later <link rel="shortcut icon" type="image/png" href="app/assets/images/logo.png"/> -->
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    </script>
+  </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
