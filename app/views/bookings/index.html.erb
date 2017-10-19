@@ -2,14 +2,54 @@
   Dashboard | Pexotic
 <% end %>
 
+<div class="dashboard-container">
 <div class="container">
-  <h1>Dashboard for bookings</h1>
-  <ul>
-    <li>ID | name |total_$$| start_date | end_date |duration|owner_email|status</li>
+  <h1>Dashboard</h1>
+  <div class="tabs">
+  <a class="tab active" href="#">
+    <h3>BOOKINGS</h3>
+  </a>
+  <a class="tab" href="#">
+    <h3>POSTS</h3>
+  </a>
+</div>
+
+    <ul>
+<!--     <li>ID | name |total_$$| start_date | end_date |duration|owner_email|status</li> -->
     <% @user.bookings.each do |booking| %>
       <li>
-        <%= booking.id %> | <%= booking.pet.name %> | <%= booking.total_price %> | <%= booking.start_date %> | <%= booking.end_date %> | <%= booking.duration %> |<%= booking.pet.owner.email %> |<%= booking.status %>
+    <div class="product">
+<!--   <div class='product-upvote'>
+    <div class="product-arrow"></div>
+    <div class='product-count'>95</div>
+  </div> -->
+  <%= cl_image_tag booking.pet.photo, height: 200, width: 300, crop: :fill, class: "pet-photo" %>
+<!--   <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs"> -->
+  <div class='product-body'>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <h3><%= booking.pet.name %></h3>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-sm-offset-0.5">
+        <%= "¥#{booking.total_price}" %>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-sm-offset-2 text-right">
+        <%= "#{booking.start_date.month}/#{booking.start_date.day}/#{booking.start_date.year} to #{booking.end_date.month}/#{booking.end_date.day}/#{booking.end_date.year}" %>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+      </div>
+    </div>
+  </div>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li><a href=""><i class="fa fa-ban"></i></a></li>
+    <li><a href=""><i class="fa fa-envelope-o"></i></a></li>
+    <li><a href=""><%= booking.status %></i></a></li>
+  </ul>
       </li>
     <% end %>
   </ul>
+
 </div>
+</div>
+</div>
+
