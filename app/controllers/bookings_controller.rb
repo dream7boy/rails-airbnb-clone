@@ -1,24 +1,28 @@
 class BookingsController < ApplicationController
 
+  def index
+    @user = current_user
+  end
+
   def new
     @pet = Pet.find(params[:pet_id])
+    @booking = @pet.bookings.build
     @duration = (@pet.end_date - @pet.start_date).to_i
     @total_price = @pet.daily_price * @duration
-    @booking = @pet.bookings.build
-    # byebug
   end
 
   def create
-    # byebug
     @pet = Pet.find(params[:pet_id])
     @booking = @pet.bookings.build(booking_params)
     @booking.status = "Pending"
     @booking.booker = current_user
-    # byebug
+    @booking.start_date = @pet.start_date
+    @booking.end_date = @pet.end_date
+
     if @booking.save
-      redirect_to @pet
+      redirect_to user_bookings_path(current_user)
     else
-      render "pets/show"
+      render "new"
     end
   end
 

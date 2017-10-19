@@ -1,3 +1,5 @@
+
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -17,6 +19,8 @@
 @import "devise/shared/links";
 @import "devise/sessions/new";
 @import "pets/index";
+
+@import "bookings/new";
 
 body {
   padding-bottom: 140px;

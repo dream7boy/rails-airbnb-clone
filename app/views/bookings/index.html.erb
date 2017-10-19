@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Dashboard for bookings</h1>
+  <ul>
+    <li>ID | name |total_$$| start_date | end_date |duration|owner_email|status</li>
+    <% @user.bookings.each do |booking| %>
+      <li>
+        <%= booking.id %> | <%= booking.pet.name %> | <%= booking.total_price %> | <%= booking.start_date %> | <%= booking.end_date %> | <%= booking.duration %> |<%= booking.pet.owner.email %> |<%= booking.status %>
+      </li>
+    <% end %>
+  </ul>
+</div>

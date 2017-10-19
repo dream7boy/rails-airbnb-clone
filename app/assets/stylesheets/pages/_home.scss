@@ -1,4 +1,3 @@
-
 body {
   background: white;
 }
@@ -26,11 +25,19 @@ body {
     font: $headers-font;
     margin-bottom: 50px;
   }
-  #select {
-    width: 400px;
-  }
-  #date {
-    margin: 10px;
+  .form-wrapper form{
+    display: flex;
+    justify-content: space-between;
+    align-item: center;
+    #start_date, #end_date {
+      width: 220px;
+    }
+    input {
+      padding: 0 5px;
+    }
+    .btn {
+      padding: 0 24px;
+    }
   }
 }
 
