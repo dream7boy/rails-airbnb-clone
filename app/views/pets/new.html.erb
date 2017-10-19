@@ -28,10 +28,11 @@
           <%= f.input :age %>
           <%= f.input :gender, collection: ["Male", "Female"] %>
           <%= f.input :personality %>
+          <%= f.input :location %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
           <br>
-          <%= f.submit "Submit", class: "btn btn-primary btn-success btn-lg", style: "width: 100%" %>
+          <%= f.submit "Submit", class: "btn btn-success btn-lg" %>
       <% end %>
     </div>
   </div>

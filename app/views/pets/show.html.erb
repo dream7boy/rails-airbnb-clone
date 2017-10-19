@@ -4,9 +4,7 @@
       <div class="col-xs-12 col-sm-8">
         <div>
           <h1 class="text-center">Mr. <%= @pet.name %><%#= @pet.name %></h1>
-          <!-- <%#= image_tag "crocodile_review.jpg", class: "show-image text-center" %></p> -->
-          <%= cl_image_tag @pet.photo, height: 700, width: 640, crop: :scale, class: "show-image text-center" %>
-          <!-- changed to dynamically -->
+          <%= cl_image_tag @pet.photo, class: "show-image text-center" %>
         </div>
         <div class="pets-content">
           <h2>The Creature</h2>
@@ -60,25 +58,34 @@
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="book-container text-center">
-          <h2>Rent Mr. <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Shoule be dynamically -->
+          <h2>Rent Mr. <%= @pet.name %> for ¥<%= @pet.daily_price %>/day?</h2> <!-- Should be dynamically -->
           <hr>
           <div class="rental-dates">
             <form action="" method="get" accept-charset="utf-8">
               <div class="form-group">
                 <label for="" id="label-date">Rental Start Date:  </label>
-                <input type="date" class="rent-input-field">
+                <input type="date" class="rent-input-field" value="<%= @pet.start_date %>" id="rental-start-date" onchange="handler(event);">
               </div>
               <div class="form-group">
                 <label for="" id="label-date">Rental End Date:  </label>
-                <input type="date" class="rent-input-field">
+                <input type="date" class="rent-input-field" value="<%= @pet.end_date %>" id="rental-end-date" onchange="handler(event);">
               </div>
-              <% if @is_owner %>
-                <button type="button" class="btn btn-lg btn-primary" disabled>Your Pet!</button>
-              <% elsif @booked == false %>
-                <%= link_to "Book", new_pet_booking_path(@pet), class: "btn btn-primary", data: { confirm: 'The message is sent to the owner. Please wait for his/her response for a while.'} %>
-              <% elsif @booked %>
-                <button type="button" class="btn btn-lg btn-primary" disabled>Booked by You</button>
-              <% end %>
+              <br>
+                <h5>Total Cost:</h5>
+                <h5>¥ <%= @pet.daily_price %> * <%= @pet.end_date.day - @pet.start_date.day %>
+                <% if (@pet.end_date.day - @pet.start_date.day) > 1 %>
+                  <%= "days" %>
+                <% else %>
+                  <%= "day" %>
+                <% end %> = ¥ <%= @pet.daily_price * (@pet.end_date.day - @pet.start_date.day) %></h5>
+                
+                <% if @is_owner %>
+                  <button type="button" class="btn btn-lg btn-primary" disabled>Your Pet!</button>
+                <% elsif @booked == false %>
+                  <%= link_to "Book", new_pet_booking_path(@pet), class: "btn btn-primary", data: { confirm: 'The message is sent to the owner. Please wait for his/her response for a while.'} %>
+                <% elsif @booked %>
+                  <button type="button" class="btn btn-lg btn-primary" disabled>Booked by You</button>
+                <% end %>
             </form>
           </div>
         </div>

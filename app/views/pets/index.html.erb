@@ -5,19 +5,21 @@
   <div class="card-wrapper">
   <div class="container">
     <div class="row">
-        <h1>Available <%= params[:species] %>s</h1>
-        <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
+        <% if (params[:species].nil? || params[:start_date].nil? || params[:start_date].nil?) %>
+          <h1>Available <%= params[:species] %>s</h1>
+          <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
+        <% end %>
         <% if @pets.count == 0 %>
           <h3>Sorry, nothing on these dates</h3>
-          <%= link_to "Back to search", root_path %>
+          <%= link_to "Back to search", root_path, class: "btn btn-success" %>
         <% end %>
 
             <% @pets.each do |pet| %>
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                 <%= link_to pet_path(pet) do %>
-                  <div class="card" style="background-image: url('<%= image_path "crocodile.jpg" %>');">
+                  <div class="card" style="background-image: url('<%= cl_image_path pet.photo  %>');">
 
-                    <%= cl_image_tag pet.photo, height: 300, width: 300, crop: :scale, class: "card" %>
+                    
 
                       <div class="card-category"><%= pet.species %></div>
                       <%#= link_to "a", pet_path(pet) %>

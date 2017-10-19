@@ -48,7 +48,7 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:start_date, :end_date,
       :name, :species, :daily_price, :description, :age,
-      :gender, :personality, :photo, :photo_cache)
+      :gender, :personality, :location, :photo, :photo_cache)
   end
 
   def search_params
