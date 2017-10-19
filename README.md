@@ -21,6 +21,7 @@
 1. `git commit -m “edit comments”` The comments should be easier for others to understand it.
 1. `git push origin "your branchname"` to push it to origin
 1. Go to [Github](https://github.com/dream7boy/rails-airbnb-clone) and create pull request. Don't forget to assign it to @dream7boy.
+1. Check the pull reqest and resolve conflict if needed
 
 ### ◎On Trello
 1. Move the card to "Review" and assign to @junggunlee.
