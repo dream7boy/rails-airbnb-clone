@@ -5,12 +5,12 @@
   <div class="card-wrapper">
   <div class="container">
     <div class="row">
-        <% if (params[:species].nil? || params[:start_date].nil? || params[:start_date].nil?) %>
-          <h1>Available <%= params[:species] %>s</h1>
-          <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
+        <h1>Available <%= params[:species] %>s</h1>
+        <% unless (params[:start_date].nil? || params[:start_date].nil?) %>
+            <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
         <% end %>
         <% if @pets.count == 0 %>
-          <h3>Sorry, nothing on these dates</h3>
+          <h3>Sorry, no available <%= params[:species] %> on these dates</h3>
           <%= link_to "Back to search", root_path, class: "btn btn-success" %>
         <% end %>
 
