@@ -20,20 +20,22 @@ $('#rental-start-date, #rental-end-date').change(function(event) {
 
 
   const days = (end - start) / (1000*60*60*24) + 1;
-
+  const daily_price = $('#total-cost').data('price');
   if (days < 1) {
     event.preventDefault();
     alert('Error! Please make sure your end date is after your start date.');
+    $('#total-cost').text(`ERROR: Please make sure your end date is after your start date.`);
+  } else {
+    $('#total-cost').text(`¥ ${daily_price} * ${days} day${days > 1 ? 's' : ''} = ¥ ${daily_price * days}`);
   }
-  const daily_price = $('#total-cost').data('price');
+
   // console.log(daily_price * days);
 
   // ¥ 16000 * 2 days = ¥ 32000
-  // let days_plurality;
+  // var days_plurality;
   // if (days > 1) {
   //   days_plurality = "days";
   // } else {
   //   days_plurality = "day";
   // }
-  $('#total-cost').text(`¥ ${daily_price} * ${days} day${days > 1 ? 's' : ''} = ¥ ${daily_price * days}`);
 });
