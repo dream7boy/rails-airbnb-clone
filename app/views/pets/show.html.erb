@@ -4,7 +4,9 @@
       <div class="col-xs-12 col-sm-8">
         <div>
           <h1 class="text-center">Mr. <%= @pet.name %><%#= @pet.name %></h1>
-          <%= image_tag "crocodile_review.jpg", class: "show-image text-center" %></p> <!-- changed to dynamically -->
+          <!-- <%#= image_tag "crocodile_review.jpg", class: "show-image text-center" %></p> -->
+          <%= cl_image_tag @pet.photo, height: 700, width: 640, crop: :scale, class: "show-image text-center" %>
+          <!-- changed to dynamically -->
         </div>
         <div class="pets-content">
           <h2>The Creature</h2>

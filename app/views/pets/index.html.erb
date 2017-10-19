@@ -17,6 +17,8 @@
                 <%= link_to pet_path(pet) do %>
                   <div class="card" style="background-image: url('<%= image_path "crocodile.jpg" %>');">
 
+                    <%= cl_image_tag pet.photo, height: 300, width: 300, crop: :scale, class: "card" %>
+
                       <div class="card-category"><%= pet.species %></div>
                       <%#= link_to "a", pet_path(pet) %>
                       <%= image_tag "crocodile_review.jpg", class: "card-user" %>

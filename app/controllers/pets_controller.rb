@@ -1,36 +1,14 @@
 class PetsController < ApplicationController
 
   def index
-    # @start_date = DateTime.new(2017, 10, 3)
-    # @end_date = DateTime.new(2017, 10, 4)
-    # @pets = Pet.species(params[:pet_species]).start_date(@start_date).end_date(@end_date)
 
     if params[:start_date].present? && params[:end_date].present?
       @pets = Pet.where('species LIKE ? AND start_date = ? AND end_date = ?',
       "%#{params[:species]}%", "%#{params[:start_date]}%", "%#{params[:end_date]}%")
-      # @pets = Pet.where('start_date = ?', "%#{params[:start_date]}%")
-      # @pets = Pet.where('start_date LIKE ?', "%#{params[:start_date]}%")
     else
       @pets = Pet.all
       flash[:alert] = "No specific dates chosen"
     end
-    # raise
-
-    # if params[:start_date]
-    #   @pets = Pet.where('start_date LIKE ?', "%#{params[:start_date]}%")
-    # else
-    #   @pets = Pet.all
-    # end
-
-    # if params[:end_date]
-    #   @pets = Pet.where('end_date LIKE ?', "%#{params[:end_date]}%")
-    # else
-    #   @pets = Pet.all
-    # end
-
-    # @start_date = DateTime.new(2017, 10, 3)
-    # @end_date = DateTime.new(2017, 10, 5)
-    # @pets = Pet.species("crocodile").start_date(@start_date).end_date(@end_date)
 
     @hash = Gmaps4rails.build_markers(@pets) do |pet, marker|
       marker.lat pet.latitude
@@ -63,7 +41,7 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:start_date, :end_date,
       :name, :species, :daily_price, :description, :age,
-      :gender, :personality)
+      :gender, :personality, :photo, :photo_cache)
   end
 
   def search_params

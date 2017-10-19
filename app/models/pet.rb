@@ -4,7 +4,7 @@ class Pet < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :name, :species, :description, presence: true
-  validates :name, uniqueness: true
+  # validates :name, uniqueness: true
   validates :age, :daily_price, numericality: { only_integer: true, greater_than: 0 }
 
   # validates :species, inclusion: { in: %w(cat, dog) }
@@ -14,4 +14,6 @@ class Pet < ApplicationRecord
 
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
+
+  mount_uploader :photo, PhotoUploader
 end
