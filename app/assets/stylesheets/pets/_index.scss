@@ -76,14 +76,22 @@
     }
   }
 }
-#map {
 
-  // flex: 0 0 450px;
+.gm-style-iw {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  h3 {
+    margin: 5px 0 0 0;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+#map {
   height: 400px;
   width: 100%;
-  // position: sticky;
-  // top: 0;
-  // right: 0;
 }
 
 .card-content {
