@@ -19,7 +19,14 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    @booking = @pet.bookings.build
+    @user = current_user
+
+    @booked = false
+    @user.bookings.each do |booking|
+      @booked = true if booking.pet_id == @pet.id
+    end
+
+    @is_owner = (@user.id == @pet.owner_id) ? true : false
   end
 
   def new
