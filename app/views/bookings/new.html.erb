@@ -5,9 +5,9 @@
     <div class="col-xs-12 col-sm-7" id="payment-info">
       <h2 class="text-center">Payment Information</h2>
         <%= simple_form_for :user, url: user_session_path do |f| %>
-          <%= f.input :name, as: :string %>
+          <%= f.input :name, as: :string, label: "Name on card" %>
           <%= f.input :country, as: :string %>
-          <%= f.input :card_type, selected: "Visa", collection: ["Visa", "Mastercard", "American Express"] %>
+          <%= f.input :card_type,  collection: ["Visa", "Mastercard", "American Express"], prompt: 'Choose card type' %>
           <%= f.input :card_number, as: :string %>
           <%= f.input :expires_on, placeholder: "mm/yyyy" %>
           <%= f.input :security_code, as: :string %>
