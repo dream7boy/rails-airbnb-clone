@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/stympy/faker.git
-  revision: 657162ad07a574f5e6b22d009eb6ff1253786bca
+  revision: b76d484f45a43465b9ce9cea7700f631f455d5f6
   branch: master
   specs:
     faker (1.8.4)
@@ -150,7 +150,7 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.21.0)
-    pry (0.11.1)
+    pry (0.11.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     pry-byebug (3.5.0)
