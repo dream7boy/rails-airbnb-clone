@@ -78,7 +78,6 @@
                     <% else %>
                     <%= "day" %>
                     <% end %> = ¥ <%= @pet.daily_price * (@pet.end_date.day - @pet.start_date.day + 1) %></h5>
-                
                 <% if @is_owner %>
                   <button type="button" class="btn btn-lg btn-primary" disabled>Your Pet!</button>
                 <% elsif @booked == false %>

@@ -44,8 +44,22 @@ puts 'Creating database...'
       pet.remote_photo_url = photo_urls[pet.species]
       pet.save
 
+      booking = Booking.create!(
+        total_price: rand(10000..40000).round(-3),
+        duration: rand(1..3),
+        status: ["Pending", "Confirmed"].sample,
+        start_date: start_random_date,
+        end_date: start_random_date + rand(1..3),
+        booker_id: User.first.id,
+        # booker_id: User.order("RANDOM()").first.id,
+        pet_id: Pet.order("RANDOM()").first.id
+        )
     end
   end
+
+  start_random_date = DateTime.new(2017, 10, rand(21..23))
+
+
 end
 
 puts 'Finished!'
