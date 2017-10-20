@@ -9,9 +9,11 @@
     <div class="container">
       <div class="row">
         <div class="titles">
-          <h1>Available <%= params[:species] %>s</h1>
-          <% unless (params[:start_date].nil? || params[:start_date].nil?) %>
-              <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
+          <% if (params[:start_date].present? && params[:end_date].present?) %>
+            <h1>Available <%= params[:species] %>s</h1>
+            <p>from <%= params[:start_date] %> to <%= params[:end_date] %></p>
+          <% else %>
+            <h1>All the available pets around you</h1>
           <% end %>
           <% if @pets.count == 0 %>
             <h3>Sorry, no available <%= params[:species] %> on these dates</h3>
