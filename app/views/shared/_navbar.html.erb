@@ -48,6 +48,7 @@
       <!-- Login link (when logged out) -->
       <ul>
         <li>
+          <%= link_to t(".pet_owner", default: "Be a pet owner"), new_pet_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
         </li>
@@ -100,6 +101,11 @@
           <li>
             <%= link_to new_user_registration_path do %>
               <i class="fa fa-sign-in"></i> <%= t(".signup", default: "Sign up") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_pet_path do %>
+              <i class="fa fa-user-circle-o"></i> <%= t(".pet_owner", default: "Be a pet owner") %>
             <% end %>
           </li>
         </ul>
