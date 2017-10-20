@@ -5,24 +5,25 @@
       <%= form_tag(pets_path, method: :get) do %>
         <%#= text_field_tag :species, params[:species] %>
         <%= select_tag "species",
-        raw("<option>Capybara</option>
-        <option>Iguana</option>
-        <option>Chameleon</option>
-        <option>Python</option>
-        <option>Wallaby</option>
-        <option>Crocodile</option>
-        <option>Fennec</option>
-        <option>Bearded Dragon</option>
-        <option>Serval</option>
-        <option>Hedgehog</option>
-        <option>Chinchilla</option>
-        <option>Flying Squirrel</option>
-        <option>Monkey</option>
-        <option>Fox</option>
-        <option>Skunk</option>
-        <option>Llama</option>
-        <option>Hippopotamus</option>
-        <option>Macaw</option>"), class: "input-lg form-top" %>
+          raw("<option>Capybara</option>
+          <option>Iguana</option>
+          <option>Chameleon</option>
+          <option>Python</option>
+          <option>Wallaby</option>
+          <option>Crocodile</option>
+          <option>Fennec</option>
+          <option>Bearded Dragon</option>
+          <option>Serval</option>
+          <option>Hedgehog</option>
+          <option>Chinchilla</option>
+          <option>Flying Squirrel</option>
+          <option>Monkey</option>
+          <option>Fox</option>
+          <option>Skunk</option>
+          <option>Llama</option>
+          <option>Hippopotamus</option>
+          <option>Macaw</option>"),
+           class: "input-lg form-top" %>
 
         <%= date_field_tag :start_date, params[:start_date], class: "input-lg form-top" %>
         <%= date_field_tag :end_date, params[:end_date], class: "input-lg form-top" %>
@@ -31,12 +32,13 @@
     </div>
   </div>
 </div>
+
 <div class="home-content text-center">
   <h2>Why Choose Pexotic?</h2>
   <br>
   <%= image_tag 'exoticpets.jpg' %>
   <br>
-    <p id="first-paragraph">Lease your exotic pet and earn money</p>
-    <p>Rent an exotic pet for a day or more</p>
-    <p>Join a community of exotic pet lovers</p>
+  <p id="first-paragraph">Lease your exotic pet and earn money</p>
+  <p>Rent an exotic pet for a day or more</p>
+  <p>Join a community of exotic pet lovers</p>
 </div>

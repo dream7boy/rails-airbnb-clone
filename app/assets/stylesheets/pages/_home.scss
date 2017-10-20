@@ -3,51 +3,32 @@ body {
 }
 
 .banner {
-  color: white;
   text-align: center;
   height: calc(100vh - 170px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
   h1 {
     color: white;
     font: $headers-font;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-    padding: 40px;
+    margin: 0;
   }
-  h2 {
-    color: black;
-    font: $headers-font;
-    margin-bottom: 50px;
-  }
-  .form-wrapper form{
-    display: flex;
-    justify-content: space-between;
-    align-item: center;
-    #start_date, #end_date {
-      width: 230px;
-    }
-    input {
-      margin: 0 5px;
-    }
-    .btn {
-      padding: 0 24px;
-      border-radius: 5px;
-    }
+  .btn {
+    display: block;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 30%;
   }
 }
 
 .home-content {
-  padding: 30px;
-  padding-top: 0px;
-  .input-lg {
-    padding: 10px;
-  }
+  padding: 10px;
+  text-align: center;
   p {
     font: $body-font;
     font-size: 28px;
@@ -58,9 +39,4 @@ body {
   #first-paragraph {
     margin-top: 30px;
   }
-}
-
-.form-top {
-  color: black;
-  border: none;
 }
