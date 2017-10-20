@@ -5,7 +5,8 @@
       <%= form_tag(pets_path, method: :get) do %>
         <%#= text_field_tag :species, params[:species] %>
         <%= select_tag "species",
-          raw("<option>Capybara</option>
+          raw("<option>Select a pet species</option>
+          <option>Capybara</option>
           <option>Iguana</option>
           <option>Chameleon</option>
           <option>Python</option>
