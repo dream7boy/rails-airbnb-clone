@@ -6,7 +6,7 @@ class Pet < ApplicationRecord
   validates :name, :species, :description, presence: true
   # validates :name, uniqueness: true
   validates :age, :daily_price, numericality: { only_integer: true, greater_than: 0 }
-
+  validates :photo, presence: true
   # validates :species, inclusion: { in: %w(cat, dog) }
   scope :species, -> (species) { where species: species }
   scope :start_date, -> (start_date) { where start_date: start_date }
