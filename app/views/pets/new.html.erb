@@ -23,20 +23,20 @@
               </ul>
             </div>
           <% end %>
+          <%= f.input :name, placeholder: "eg,) Mr. Hedgehog" %>
+          <%= f.input :species, collection: ["Iguana", "Hedgehog", "Capybara", "Chameleon", "Fennec", "Fox", "Bearded Dragon", "Wallaby", "Chinchilla", "Llama", "Hippopotamus", "Macaw", "Python", "Serva", "Skunk", "Flying Squirrel", "Monkey", "Crocodile"], prompt: "Choose species" %>
+          <%= f.input :personality, placeholder: "eg,) Calm and nice" %>
+          <%= f.input :description, placeholder: "eg,) Mr. Hedgehog is super friendly and adorable..."%>
+          <%= f.input :gender, collection: ["Male", "Female"], prompt: "Choose the gender" %>
+          <%= f.input :age, placeholder: "eg,)  1  (Input number)"%>
+          <%= f.input :location, placeholder: "eg,) Tokyo, Japan" %>
+          <%= f.input :daily_price, placeholder: "eg,) ¥1,000/day" %>
           <%= f.input :start_date, id: "start-date", class: "form-inline inline" %>
           <%= f.input :end_date, id: "end-date", class: "form-inline inline" %>
-          <%= f.input :name, placeholder: "eg,) Mr. Hedgehog" %>
-          <%= f.input :species, collection: ["Iguana", "Hedgehog", "Capybara", "Chameleon", "Fennec", "Fox", "Bearded Dragon", "Wallaby", "Chinchilla", "Llama", "Hippopotamus", "Macaw", "Python", "Serva", "Skunk", "Flying Squirrel", "Monkey", "Crocodile"] %>
-          <%= f.input :daily_price, placeholder: "eg,) ¥1,000/day" %>
-          <%= f.input :description, placeholder: "eg,) Mr. Hedgehog is super friendly and adorable..."%>
-          <%= f.input :age, placeholder: "eg,)  1  (Input number)"%>
-          <%= f.input :gender, collection: ["Male", "Female"] %>
-          <%= f.input :personality, placeholder: "eg,) Calm and nice" %>
-          <%= f.input :location, placeholder: "eg,) Tokyo, Japan" %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
           <br>
-          <%= f.submit "Submit", class: "btn btn-success btn-lg" %>
+          <%= f.submit "Create", class: "btn btn-success btn-lg" %>
       <% end %>
     </div>
   </div>
