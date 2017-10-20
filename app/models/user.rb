@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :pets, foreign_key: "owner_id", dependent: :destroy
   has_many :bookings, foreign_key: "booker_id", dependent: :destroy
 
+  mount_uploader :photo, PhotoUploader
+
   after_create :send_welcome_email
 
   def self.find_for_facebook_oauth(auth)
