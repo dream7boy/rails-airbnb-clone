@@ -1,0 +1,31 @@
+<!-- _my_bookings.html.erb -->
+  <ul>
+<!--     <li>ID | name |total_$$| start_date | end_date |duration|owner_email|status</li> -->
+    <% @user.bookings.reverse.each do |booking| %>
+      <li>
+      <div class="product">
+        <%= cl_image_tag booking.pet.photo, height: 200, width: 300, crop: :fill, class: "pet-photo" %>
+<!--   <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs"> -->
+          <div class='product-body'>
+            <div class="row">
+              <div class="col-xs-12 col-sm-3 pet-path">
+                <h3><%= link_to booking.pet.name, pet_path(booking.pet) %></h3>
+              </div>
+            <div class="col-xs-12 col-sm-2 col-sm-offset-0.5">
+              <%= "¥#{booking.total_price}" %>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-sm-offset-0.5 text-center">
+              <%= "#{booking.start_date.month}/#{booking.start_date.day}/#{booking.start_date.year} to #{booking.end_date.month}/#{booking.end_date.day}/#{booking.end_date.year}" %>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+              <ul class="list-inline product-controls hidden-sm hidden-xs">
+                <li class="icons"><a href="" title="Cancel booking" data-toggle="tooltip"><i class="fa fa-ban"></i></a></li>
+                <li class="icons"><a href="" title="Contact owner" data-toggle="tooltip"><i class="fa fa-envelope-o"></i></a></li>
+                <li class="booking-status"><a href=""><%= booking.status %></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
