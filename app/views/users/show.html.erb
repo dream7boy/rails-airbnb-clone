@@ -3,9 +3,18 @@
   <%= simple_form_for(@user) do |f| %>
     <%= f.input :email %>
     <%= f.input :location %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "Edit", class: "btn btn-primary" %>
   <% end %>
 
   <h2>Your pets</h2>
   <h2>Someone's pets</h2>
+
+  <% profile_pic = current_user.facebook_picture_url || current_user.photo %>
+
+  <%= image_tag profile_pic, class: "show-image text-center" %>
+
+  <%#= cl_image_tag @user.photo, class: "show-image text-center" %>
 </div>
+
