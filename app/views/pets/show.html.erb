@@ -11,12 +11,10 @@
     </div> -->
     <div class="row">
       <div class="col-xs-12 col-sm-8">
-        <div>
-          <h1 class="text-center">Mr. <%= @pet.name %><%#= @pet.name %></h1>
-          <%= cl_image_tag @pet.photo, class: "show-image text-center" %>
-        </div>
+        <h1 class="text-center"><%= @pet.name %></h1>
+        <%= cl_image_tag @pet.photo, class: "show-image text-center" %>
         <div class="pets-content">
-          <h2>The Creature</h2>
+          <h2>About this Creature</h2>
           <p><%= @pet.description %></p>
           <h2>Details</h2>
           <ul>
