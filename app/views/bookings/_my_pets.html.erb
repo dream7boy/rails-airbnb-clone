@@ -1,14 +1,9 @@
 <!-- _my_pets.html.erb
  -->
-
-<!-- iterate through all the pets
-list each pet, image, name, daily price, etc
-link to add a new pet
--->
   <ul>
     <% @user.pets.each do |pet| %>
       <li>
-      <div class="product">
+          <div class="product">
         <%= cl_image_tag pet.photo, height: 200, width: 300, crop: :fill, class: "pet-photo" %>
 <!--   <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs"> -->
           <div class='product-body'>
@@ -31,6 +26,7 @@ link to add a new pet
             </div>
           </div>
         </div>
+        </div>
+        <% end %>
       </li>
-    <% end %>
   </ul>
