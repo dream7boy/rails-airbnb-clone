@@ -25,6 +25,9 @@ gem "gmaps4rails"
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 
+gem "letter_opener", group: :development
+
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
