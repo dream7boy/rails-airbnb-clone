@@ -25,14 +25,14 @@
           <% end %>
           <%= f.input :start_date, id: "start-date", class: "form-inline inline" %>
           <%= f.input :end_date, id: "end-date", class: "form-inline inline" %>
-          <%= f.input :name %>
+          <%= f.input :name, placeholder: "eg,) Mr. Hedgehog" %>
           <%= f.input :species, collection: ["Iguana", "Hedgehog", "Capybara", "Chameleon", "Fennec", "Fox", "Bearded Dragon", "Wallaby", "Chinchilla", "Llama", "Hippopotamus", "Macaw", "Python", "Serva", "Skunk", "Flying Squirrel", "Monkey", "Crocodile"] %>
-          <%= f.input :daily_price %>
-          <%= f.input :description %>
-          <%= f.input :age %>
+          <%= f.input :daily_price, placeholder: "eg,) ¥1,000/day" %>
+          <%= f.input :description, placeholder: "eg,) Mr. Hedgehog is super friendly and adorable..."%>
+          <%= f.input :age, placeholder: "eg,)  1  (Input number)"%>
           <%= f.input :gender, collection: ["Male", "Female"] %>
-          <%= f.input :personality %>
-          <%= f.input :location %>
+          <%= f.input :personality, placeholder: "eg,) Calm and nice" %>
+          <%= f.input :location, placeholder: "eg,) Tokyo, Japan" %>
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
           <br>

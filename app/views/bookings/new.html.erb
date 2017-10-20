@@ -8,13 +8,13 @@
       <div class id="payment-info">
         <h2 class="text-center">Payment Information</h2>
           <%= simple_form_for :user, url: user_session_path do |f| %>
-            <%= f.input :name, as: :string, label: "Name on card" %>
-            <%= f.input :country, as: :string %>
+            <%= f.input :name, as: :string, label: "Name on card", placeholder: "eg,) Input your name on card" %>
+            <%= f.input :country, as: :string, placeholder: "eg,) Japan" %>
             <%= f.input :card_type,  collection: ["Visa", "Mastercard", "American Express"], prompt: 'Choose card type' %>
-            <%= f.input :card_number, as: :string %>
+            <%= f.input :card_number, as: :string ,placeholder: "●●●●　●●●●　●●●●　●●●●"%>
             <%= f.input :expires_on, collection: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"], prompt: "mm" %>
             <%=   f.input :expires_on, label: false, collection: 2017..2030, prompt: "yyyy" %>
-            <%= f.input :security_code, as: :string %>
+            <%= f.input :security_code, as: :string, placeholder: "Input security code on your card" %>
           <% end %>
       </div>
     </div>
