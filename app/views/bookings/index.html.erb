@@ -4,7 +4,7 @@
 
 <div class="dashboard-container">
 <div class="container">
-  <h1>Dashboard</h1>
+  <h1 id="dashboard-title">Dashboard</h1>
   <div class="tabs">
   <a class="tab active" href="#">
     <h3>BOOKINGS</h3>
@@ -13,7 +13,23 @@
     <h3>POSTS</h3>
   </a>
 </div>
-
+<!--   <div class="row dashboard-labels">
+    <div class="col-xs-12 col-sm-2 col-sm-offset-4">
+      <p>Name </p>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <p>Price</p>
+    </div>
+    <div class="col-xs-12 col-sm-1">
+      <p>Dates</p>
+    </div>
+      <div class="col-xs-12 col-sm-1">
+        <p>Actions</p>
+      </div>
+      <div class="col-xs-12 col-sm-1 col-sm-offset-1">
+        <p>Status</p>
+      </div>
+  </div> -->
     <ul>
 <!--     <li>ID | name |total_$$| start_date | end_date |duration|owner_email|status</li> -->
     <% @user.bookings.reverse.each do |booking| %>
@@ -27,24 +43,24 @@
 <!--   <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs"> -->
   <div class='product-body'>
     <div class="row">
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-3">
         <h3><%= booking.pet.name %></h3>
       </div>
       <div class="col-xs-12 col-sm-2 col-sm-offset-0.5">
         <%= "¥#{booking.total_price}" %>
       </div>
-      <div class="col-xs-12 col-sm-2 col-sm-offset-2 text-right">
+      <div class="col-xs-12 col-sm-2 col-sm-offset-0.5 text-center">
         <%= "#{booking.start_date.month}/#{booking.start_date.day}/#{booking.start_date.year} to #{booking.end_date.month}/#{booking.end_date.day}/#{booking.end_date.year}" %>
       </div>
-      <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+      <div class="col-xs-12 col-sm-2">
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li class="icons"><a href="" title="Cancel booking" data-toggle="tooltip"><i class="fa fa-ban"></i></a></li>
+    <li class="icons"><a href="" title="Contact owner" data-toggle="tooltip"><i class="fa fa-envelope-o"></i></a></li>
+    <li class="booking-status"><a href=""><%= booking.status %></i></a></li>
+  </ul>
       </div>
     </div>
   </div>
-  <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <li><a href=""><i class="fa fa-ban"></i></a></li>
-    <li><a href=""><i class="fa fa-envelope-o"></i></a></li>
-    <li><a href=""><%= booking.status %></i></a></li>
-  </ul>
       </li>
     <% end %>
   </ul>
