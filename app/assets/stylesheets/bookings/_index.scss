@@ -141,6 +141,10 @@
 .product-upvote:hover .product-arrow {
   border-bottom: 9px solid #5898f1;
 }
+  .pet-path a {
+    color: $green;
+    text-decoration: none;
+  }
 .dashboard-container {
   ul {
   list-style-type: none;

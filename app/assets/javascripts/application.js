@@ -24,3 +24,20 @@ $('#rental-start-date, #rental-end-date').change(function(event) {
     $('#total-cost').text(`¥ ${daily_price} * ${days} day${days > 1 ? 's' : ''} = ¥ ${daily_price * days}`);
   }
 });
+
+$('#my-pets').hide();
+$('#my-bookings-tab').addClass("active");
+
+$('#my-pets-tab').click(function(event) {
+  $('#my-bookings-tab').removeClass("active");
+  $('#my-bookings').hide();
+  $('#my-pets').show();
+  $('#my-pets-tab').addClass("active");
+});
+
+$('#my-bookings-tab').click(function(event) {
+  $('#my-pets-tab').removeClass("active");
+  $('#my-pets').hide();
+  $('#my-bookings').show();
+  $('#my-bookings-tab').addClass("active");
+});
